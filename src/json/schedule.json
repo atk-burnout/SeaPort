@@ -1,0 +1,85 @@
+{
+  "ships": [
+    {
+      "name": "SS Ideal X",
+      "arriving": {
+        "hour": 18,
+        "day": 15,
+        "minute": 32
+      },
+      "cargo": "1741:BULK"
+    },
+    {
+      "name": "MV Ascension",
+      "arriving": {
+        "hour": 9,
+        "day": 20,
+        "minute": 50
+      },
+      "cargo": "567:CONTAINER"
+    },
+    {
+      "name": "Al Rekayyat",
+      "arriving": {
+        "hour": 12,
+        "day": 6,
+        "minute": 43
+      },
+      "cargo": "3040:BULK"
+    },
+    {
+      "name": "MV Algolake",
+      "arriving": {
+        "hour": 1,
+        "day": 22,
+        "minute": 40
+      },
+      "cargo": "367:CONTAINER"
+    },
+    {
+      "name": "MV American Courage",
+      "arriving": {
+        "hour": 11,
+        "day": 27,
+        "minute": 25
+      },
+      "cargo": "3481:BULK"
+    },
+    {
+      "name": "MV Federal Oshima",
+      "arriving": {
+        "hour": 3,
+        "day": 22,
+        "minute": 10
+      },
+      "cargo": "1969:LIQUID"
+    },
+    {
+      "name": "MV Resolution Bay",
+      "arriving": {
+        "hour": 5,
+        "day": 3,
+        "minute": 38
+      },
+      "cargo": "7930:BULK"
+    },
+    {
+      "name": "MV Empire MacCabe",
+      "arriving": {
+        "hour": 23,
+        "day": 28,
+        "minute": 45
+      },
+      "cargo": "378:CONTAINER"
+    },
+    {
+      "name": "Evergreen",
+      "arriving": {
+        "hour": 22,
+        "day": 23,
+        "minute": 11
+      },
+      "cargo": "3000:BULK"
+    }
+  ]
+}
