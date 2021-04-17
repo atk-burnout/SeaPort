@@ -2,7 +2,7 @@ package schedule;
 
 import java.util.Objects;
 
-public class Time implements Comparable<Time> {
+public class Time{
     private int day;
     private int hour;
     private int minute;
@@ -78,35 +78,6 @@ public class Time implements Comparable<Time> {
 
     public void setMinute(int minute) {
         this.minute = minute;
-    }
-
-    @Override
-    public int compareTo(Time time) {
-        if (day < time.getDay()) {
-            return -1;
-        }
-
-        if (day > time.getDay()) {
-            return 1;
-        }
-
-        if (hour < time.getHour()) {
-            return -1;
-        }
-
-        if (hour > time.getHour()) {
-            return 1;
-        }
-
-        if (minute < time.getMinute()) {
-            return -1;
-        }
-
-        if (minute > time.getMinute()) {
-            return 1;
-        }
-
-        return 0;
     }
 
     @Override
