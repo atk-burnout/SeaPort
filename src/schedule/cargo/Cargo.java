@@ -4,7 +4,6 @@ package schedule.cargo;
  * A class is a cargo that has a certain type, according to which there is a number of tons or pieces of containers.
  */
 public class Cargo {
-
     final private TypeOfCargo kind;
     final private int amount;
 

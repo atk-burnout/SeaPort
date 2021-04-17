@@ -19,7 +19,7 @@ public class Main {
         while (true) {
             System.out.println("Do you want to manually create note about ship to the schedule?");
             String line = in.nextLine().toLowerCase();
-            while (!line.equals("yes") && (!line.equals("no"))) {
+            while (!(line.equals("yes") || line.equals("no"))) {
                 System.out.println("Do you want to manually add another ship to existing schedule?");
                 line = in.nextLine();
             }

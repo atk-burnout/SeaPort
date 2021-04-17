@@ -7,6 +7,7 @@ import schedule.ship.Ship;
 
 import java.util.LinkedList;
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 /**
  * The class forms the ship schedule.
@@ -22,10 +23,8 @@ public class Schedule {
      * @param numberOfShips the number of ships to create a schedule for
      */
     public Schedule(int numberOfShips) {
-        for (int i = 0; i < numberOfShips; i++) {
-            NameGenerator gen = new NameGenerator();
-            ships.add(new Ship(gen.generateName(), generateCargo(), Time.getRandomTime(Time.DAYS_IN_MONTH)));
-        }
+        IntStream.range(0, numberOfShips).mapToObj(i -> new NameGenerator()).map(gen -> new Ship(gen.generateName(),
+                generateCargo(), Time.getRandomTime(Time.DAYS_IN_MONTH))).forEach(ships::add);
     }
 
     /**
@@ -48,7 +47,6 @@ public class Schedule {
                 kind = TypeOfCargo.CONTAINER;
             }
         }
-        ;
         return new Cargo(kind, amount);
     }
 

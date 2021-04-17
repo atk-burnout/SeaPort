@@ -18,8 +18,8 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 public class JSON {
-    final private static String scheduleFilename = "src/json/schedule.json";
     final private LinkedList<Ship> ships;
+    final private static String scheduleFilename = "src/json/schedule.json";
 
     public JSON(int numberOfShips) {
         ships = new Schedule(numberOfShips).getShips();
@@ -45,8 +45,8 @@ public class JSON {
             JSONObject obj = (JSONObject) new JSONParser().parse(new FileReader(scheduleFilename));
             LinkedList<Ship> ships = new LinkedList<>();
             JSONArray array = (JSONArray) obj.get("ships");
-            for (int i = 0; i < array.size(); i++) {
-                JSONObject temp = (JSONObject) array.get(i);
+            for (Object o : array) {
+                JSONObject temp = (JSONObject) o;
                 String cargoParse = temp.get("cargo").toString();
                 String[] cargoParams = cargoParse.split(":");
                 int amount = Integer.parseInt(cargoParams[0]);
@@ -62,12 +62,10 @@ public class JSON {
                         getTimeFromJSON((JSONObject) temp.get("arriving"))));
             }
             return ships;
-        } catch (ParseException | FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (ParseException | IOException e) {
             e.printStackTrace();
         }
-        return new LinkedList<Ship>();
+        return new LinkedList<>();
     }
 
     public static Time getTimeFromJSON(JSONObject obj) {

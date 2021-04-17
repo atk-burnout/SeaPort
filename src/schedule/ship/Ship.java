@@ -34,24 +34,13 @@ public class Ship {
             throw new IllegalArgumentException();
         }
         this.arriving = arriving;
-
         this.unloading = new Time(0, 0, 0);
         int count = cargo.getAmount();
         switch (cargo.getKind()) {
-            case BULK:
-                this.unloading.increaseMinutes((int) (count / BULK_TONS_PER_MINUTES));
-                break;
-            case LIQUID:
-                this.unloading.increaseMinutes((int) (count / LIQUID_TONS_PER_MINUTES));
-                break;
-            case CONTAINER:
-                this.unloading.increaseMinutes((int) (count / CONTAINER_PIECES_PER_MINUTES));
-                break;
+            case BULK -> this.unloading.increaseMinutes((int) (count / BULK_TONS_PER_MINUTES));
+            case LIQUID -> this.unloading.increaseMinutes((int) (count / LIQUID_TONS_PER_MINUTES));
+            case CONTAINER -> this.unloading.increaseMinutes((int) (count / CONTAINER_PIECES_PER_MINUTES));
         }
-    }
-
-    public Ship(Ship ship) {
-        this(ship.name, ship.cargo, new Time(ship.getArriving()));
     }
 
     public String getName() {

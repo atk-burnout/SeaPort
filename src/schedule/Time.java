@@ -121,12 +121,6 @@ public class Time implements Comparable<Time> {
         return day == time.day && hour == time.hour && minute == time.minute;
     }
 
-    public void makeEqual(Time time) {
-        day = time.getDay();
-        hour = time.getHour();
-        minute = time.getMinute();
-    }
-
     public void increaseMinutes(int time) {
         if (minute < 0) {
             throw new IllegalArgumentException();
